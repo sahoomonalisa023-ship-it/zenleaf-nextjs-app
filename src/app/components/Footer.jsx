@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ULTRA-LEGIBLE PORTFOLIO HIGHLIGHT (BRIGHT TEXT MATRIX) */}
+        {/* REFINED PORTFOLIO HIGHLIGHT (CLEAN DESIGN - NO EMAIL) */}
         <div className="mt-6 p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_0_20px_rgba(16,185,129,0.03)]">
           {/* Left Side Status */}
           <div className="flex items-center gap-2">
@@ -79,20 +79,17 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Right Side Capsule: High Visibility Contrast */}
+          {/* Right Side Capsule: Premium Single-Focus Brand Grid */}
           <div className="flex items-center gap-3 bg-emerald-500/20 border border-emerald-400/40 px-4 py-1.5 rounded-lg">
             {/* Pure White Bold Name */}
             <span className="text-xs font-black text-white tracking-wide uppercase">
               Monalisa Sahoo
             </span>
             <div className="w-px h-3 bg-emerald-400/40" />
-            {/* Super Glowing Cyan/Emerald Email */}
-            <a
-              href="mailto:sahoo.monalisa023@gmail.com"
-              className="text-[11px] text-emerald-300 hover:text-white transition-colors font-mono font-bold tracking-tight"
-            >
-              sahoo.monalisa023@gmail.com
-            </a>
+            {/* Professional Core Tech Tag or Dynamic Status Hook */}
+            <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-300 uppercase">
+              Frontend Engineer
+            </span>
           </div>
         </div>
 
