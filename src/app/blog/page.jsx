@@ -1,10 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import Footer from "../components/Footer"; // Footer component ko yahan import kiya hai
+import Navbar from "../components/Navbar"; // Navbar component ko top par import kiya
 
-// Yeh data seedhe match karega detail page se
 const blogPosts = [
   {
     id: 1,
@@ -37,9 +35,12 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="bg-white min-h-screen flex flex-col justify-between">
+    <div className="min-h-screen bg-white">
+      {/* 1. TOP NAVBAR - YEH HAR PAGE PAR TIME SE SHOW HOGA */}
+      <Navbar />
+
       {/* MAIN CONTAINER FOR BLOG CONTENT */}
-      <div className="max-w-7xl mx-auto px-6 py-16 space-y-12 bg-white flex-1 w-full">
+      <div className="max-w-7xl mx-auto px-6 py-32 space-y-12 bg-white">
         {/* HEADER */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <h1 className="text-4xl font-black tracking-tight text-gray-900 sm:text-5xl">
@@ -54,7 +55,6 @@ export default function BlogPage() {
         {/* CARDS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-6">
           {blogPosts.map((post) => {
-            // IMPORTANT: Link ab `/blog/slug_name` banega
             const postLink = `/blog/${post.slug}`;
 
             return (
@@ -100,8 +100,7 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* FOOTER SECTION: Yeh iss page ke bottom par perfectly render hoga */}
-      <Footer />
+      {/* ❌ NO FOOTER HERE AS PER REQUEST */}
     </div>
   );
 }

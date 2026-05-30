@@ -3,10 +3,10 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Navbar from "../../components/Navbar"; // 1. NAVBAR KO SABSE UPAR IMPORT KIYA (Path relative check kar lena)
 
-// DATABASE: Isme aapke main blog ka data aur home page ke 3 naye meditation articles dono ka data safe rahega
+// DATABASE: Articles mapping
 const allCombinedArticles = {
-  // === NAZDEEKI HOME PAGE ARTICLES (FEATURED) ===
   "featured-morning-focus-meditation": {
     title: "Morning Focus: Rewire Your Brain for High Productivity",
     tag: "Mindfulness",
@@ -69,8 +69,6 @@ const allCombinedArticles = {
       "Peace begins the exact moment you choose not to let your current emotions rewrite your identity.",
   },
 
-  // === AAPKE MAIN BLOG PAGE KE EXISTING ARTICLES (MEDITATION, BREATHING, ETC.) ===
-  // Agar aapke purane slugs direct chalte hain, toh unhe yahan niche objects mein mapped rakhein
   "meditation-for-beginners": {
     title: "Transform Your Mind Through Daily Meditation",
     tag: "Mindfulness",
@@ -119,8 +117,6 @@ const allCombinedArticles = {
 
 export default function BlogDetail() {
   const { slug } = useParams();
-
-  // URL slug ke mutabik correct article select hoga
   const article = allCombinedArticles[slug];
 
   if (!article) {
@@ -158,6 +154,9 @@ export default function BlogDetail() {
 
   return (
     <div className="min-h-screen bg-white pb-24 selection:bg-emerald-100">
+      {/* 2. NAVBAR KO LAYOUT MEIN SABSE UPAR RENDER KIYA */}
+      <Navbar />
+
       {/* FULL HERO HEADER IMAGE */}
       <div className="relative w-full h-96 bg-gray-950 overflow-hidden">
         <motion.img
@@ -223,14 +222,7 @@ export default function BlogDetail() {
           </p>
         </motion.div>
 
-        {/* Action Button */}
-        <motion.div variants={itemVariants} className="pt-4 text-center">
-          <Link href="/">
-            <button className="px-6 py-2.5 bg-gray-100 hover:bg-emerald-50 text-gray-800 font-semibold text-sm rounded-xl transition border border-gray-200/60 cursor-pointer">
-              ← Back to Overview
-            </button>
-          </Link>
-        </motion.div>
+        {/* ❌ Commented action block/Back link has been kept clean out of DOM rendering */}
       </motion.div>
     </div>
   );

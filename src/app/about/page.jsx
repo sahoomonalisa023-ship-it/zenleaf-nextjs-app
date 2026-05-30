@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Navbar from "../components/Navbar"; // ✅ Link ko hata diya aur sirf Navbar rakha hai
 
 export default function AboutPage() {
   const storyMilestones = [
@@ -22,14 +22,17 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 pb-28 pt-16 selection:bg-emerald-100 relative overflow-hidden">
+    <div className="min-h-screen bg-white text-gray-900 pb-28 selection:bg-emerald-100 relative overflow-hidden">
+      {/* NAVBAR KO MAIN LAYOUT MEIN SABSE UPAR RENDER KIYA */}
+      <Navbar />
+
       {/* DECORATIVE AMBIENT BACKDROP LIGHTS */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-50/40 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gray-50 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* CINEMATIC HERO STATEMENT SECTION */}
-        <div className="max-w-3xl mx-auto text-center space-y-6 pt-16">
+        <div className="max-w-3xl mx-auto text-center space-y-6 pt-28">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-800 text-[11px] font-bold tracking-widest uppercase rounded-full border border-emerald-100">
             <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping" />
             Core Framework V2
@@ -80,16 +83,6 @@ export default function AboutPage() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* FIXED NAVIGATIONAL BACK OVERVIEW ANCHOR */}
-        <div className="mt-20 text-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gray-900 hover:bg-emerald-600 text-white rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-emerald-600/10 active:scale-98 cursor-pointer"
-          >
-            &larr; Back to Homepage
-          </Link>
         </div>
       </div>
     </div>

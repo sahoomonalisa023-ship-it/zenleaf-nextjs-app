@@ -9,8 +9,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100/80 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* BRAND LOGO */}
-        <Link href="/" className="group flex items-center gap-3">
+        {/* 🛠️ BRAND LOGO - CHANGED TO <a> TAG FOR HARD REFRESH */}
+        <a href="/" className="group flex items-center gap-3 cursor-pointer">
           <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-md shadow-emerald-500/20">
             <span className="text-white font-black text-xl">Z</span>
           </div>
@@ -20,7 +20,7 @@ export default function Navbar() {
               Leaf
             </span>
           </h1>
-        </Link>
+        </a>
 
         {/* DESKTOP NAVIGATION */}
         <nav className="hidden md:flex items-center gap-8">
@@ -43,7 +43,6 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <Link href="/article/meditation">
             <button className="group relative px-6 py-2.5 bg-emerald-950 text-emerald-400 font-bold text-sm rounded-xl overflow-hidden border border-emerald-500/30 cursor-pointer hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_25px_rgba(16,185,129,0.35)] flex items-center gap-2">
-              {/* Subtle Glowing Pulse Dot inside button */}
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
@@ -53,7 +52,6 @@ export default function Navbar() {
                 Begin Journey
               </span>
 
-              {/* Background Slide Effect on Hover */}
               <div className="absolute inset-0 bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left -z-0" />
             </button>
           </Link>
