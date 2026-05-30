@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Navbar from "../components/Navbar"; // 1. NAVBAR KO SABSE UPAR IMPORT KIYA
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -28,10 +27,8 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 selection:bg-emerald-100">
-      {/* 2. NAVBAR KO MAIN LAYOUT MEIN SABSE UPAR PLACE KIYA */}
-      <Navbar />
+      {/* ❌ NO NAVBAR HERE ANYMORE - IT COMES FROM GLOBAL LAYOUT */}
 
-      {/* MAIN CONTAINER (Padding settings adjusted to prevent overlapping with top navbar) */}
       <div className="py-32 px-6 flex flex-col items-center justify-center">
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-0 bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-2xl relative">
           {/* LEFT BRAND PANEL */}
@@ -72,8 +69,7 @@ export default function ContactPage() {
           <div className="lg:col-span-7 p-12 bg-white flex flex-col justify-center">
             {showSuccessCard && (
               <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl text-sm font-medium transition-all duration-300 animate-bounce">
-                🎉 Success! Your message data has been submitted and captured
-                locally in the state stream tracker.
+                🎉 Success! Message data captured in state stream tracker.
               </div>
             )}
 
@@ -139,8 +135,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-
-      {/* ❌ Bottom "Back to Homepage" navigation block is now completely deleted */}
     </div>
   );
 }

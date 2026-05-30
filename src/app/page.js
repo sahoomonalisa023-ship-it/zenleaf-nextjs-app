@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import BlogCard from "./components/BlogCard"; // Agar BlogCard components folder mein hai toh path sahi hai
@@ -35,7 +34,8 @@ function Hero() {
 
             {/* LEAF-SHAPED GLOWING BUTTON */}
             <div className="pt-2">
-              <Link href="/article/meditation">
+              {/* 🚀 FIXED: Route changed from /article/meditation to match your actual blog slug system */}
+              <Link href="/blog/morning-focus-meditation">
                 <button className="relative px-8 py-3.5 bg-emerald-950/80 text-emerald-300 font-bold text-sm tracking-wider uppercase border border-emerald-500/40 cursor-pointer transition-all duration-300 hover:text-white hover:bg-emerald-600 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_35px_rgba(16,185,129,0.4)] rounded-tl-none rounded-br-none rounded-tr-3xl rounded-bl-3xl transform hover:scale-102 active:scale-98">
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     Begin Your Journey
@@ -102,8 +102,7 @@ const homeMeditationPosts = [
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white flex flex-col justify-between">
-      {/* GLOBAL NAVBAR */}
-      <Navbar />
+      {/* 🚀 REMOVED <Navbar /> FROM HERE BECAUSE IT IS NOW INDEPENDENTLY MANAGED BY THE GLOBAL ROOT LAYOUT */}
 
       {/* RENDER YOUR ORIGINAL PREMIUM SECTIONS */}
       <main className="flex-1 pt-20 bg-gray-950">

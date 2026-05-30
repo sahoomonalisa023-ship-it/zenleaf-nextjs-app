@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Navbar from "../components/Navbar"; // Navbar component ko top par import kiya
+// ❌ REMOVED: Manual Navbar import hata diya hai kyunki layout.js se global aa raha hai
 
 const blogPosts = [
   {
@@ -36,8 +36,7 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* 1. TOP NAVBAR - YEH HAR PAGE PAR TIME SE SHOW HOGA */}
-      <Navbar />
+      {/* ❌ REMOVED: <Navbar /> tag ko yahan se hata diya hai taaki double navbar gayab ho jaye */}
 
       {/* MAIN CONTAINER FOR BLOG CONTENT */}
       <div className="max-w-7xl mx-auto px-6 py-32 space-y-12 bg-white">

@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100/80 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* 🛠️ BRAND LOGO - CHANGED TO <a> TAG FOR HARD REFRESH */}
+        {/* 🛠️ BRAND LOGO - HARD REFRESH USING HTML <a> TAG */}
         <a href="/" className="group flex items-center gap-3 cursor-pointer">
           <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-md shadow-emerald-500/20">
             <span className="text-white font-black text-xl">Z</span>
@@ -33,15 +33,16 @@ export default function Navbar() {
                 className="relative text-sm font-semibold text-gray-600 hover:text-emerald-600 transition-colors duration-300 py-2 group/link"
               >
                 {item}
-                <span className="absolute bottom-0 left-0 w-full h-[3px] bg-emerald-500 rounded-full scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 ease-out origin-center" />
+                {/* 🛠️ OPTIMIZED TAILWIND CLASS FROM h-[3px] TO h-0.75 */}
+                <span className="absolute bottom-0 left-0 w-full h-0.75 bg-emerald-500 rounded-full scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 ease-out origin-center" />
               </Link>
             );
           })}
         </nav>
 
-        {/* UNIQUE & GLOWING "BEGIN JOURNEY" CTA BUTTON */}
+        {/* 🚀 DESKTOP "BEGIN JOURNEY" CTA BUTTON (FIXED ROUTE) */}
         <div className="hidden md:flex items-center">
-          <Link href="/article/meditation">
+          <Link href="/blog/featured-morning-focus-meditation">
             <button className="group relative px-6 py-2.5 bg-emerald-950 text-emerald-400 font-bold text-sm rounded-xl overflow-hidden border border-emerald-500/30 cursor-pointer hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_25px_rgba(16,185,129,0.35)] flex items-center gap-2">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -52,7 +53,8 @@ export default function Navbar() {
                 Begin Journey
               </span>
 
-              <div className="absolute inset-0 bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left -z-0" />
+              {/* 🛠️ OPTIMIZED TAILWIND CLASS FROM -z-0 TO z-0 */}
+              <div className="absolute inset-0 bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-0" />
             </button>
           </Link>
         </div>
@@ -93,9 +95,14 @@ export default function Navbar() {
               </Link>
             );
           })}
+
+          {/* 🚀 MOBILE "BEGIN JOURNEY" BUTTON (FIXED ROUTE) */}
           <div className="pt-2">
-            <Link href="/article/meditation" onClick={() => setIsOpen(false)}>
-              <button className="w-full py-3 bg-emerald-600 text-white font-semibold rounded-xl text-center shadow-md">
+            <Link
+              href="/blog/featured-morning-focus-meditation"
+              onClick={() => setIsOpen(false)}
+            >
+              <button className="w-full py-3 bg-emerald-600 text-white font-semibold rounded-xl text-center shadow-md cursor-pointer">
                 Begin Journey
               </button>
             </Link>
