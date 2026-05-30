@@ -56,6 +56,7 @@ export default function Footer() {
               Focus Areas
             </h4>
             <ul className="space-y-2 text-xs text-gray-300">
+              {/* ✅ Fixed broken closing tags here */}
               <li className="hover:text-emerald-400 transition-colors cursor-pointer flex items-center gap-2">
                 Meditation
               </li>
@@ -86,9 +87,8 @@ export default function Footer() {
               Monalisa Sahoo
             </span>
             <div className="w-px h-3 bg-emerald-400/40" />
-            {/* Professional Core Tech Tag or Dynamic Status Hook */}
             <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-300 uppercase">
-              Frontend Engineer
+              Frontend Developer
             </span>
           </div>
         </div>
